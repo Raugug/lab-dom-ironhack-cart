@@ -3,7 +3,7 @@ function deleteItem(e){
 var product = e.currentTarget.parentNode;
 var parent = product.parentNode;
 var garbage = parent.removeChild(product);
-getTotalPrice;
+getTotalPrice();
 
 //console.log(garbage);
 }
@@ -52,7 +52,6 @@ function createNewItemRow(itemName, itemUnitPrice){
 
   var product = document.getElementsByClassName("product")[0];
   var prodCopy = product.cloneNode(true);
-  //prodCopy.getElementById("name").innerHTML = itemName;
   
   var parent = document.getElementsByClassName('box')[0];
   var next = document.getElementById("add");
@@ -61,10 +60,8 @@ function createNewItemRow(itemName, itemUnitPrice){
   products[products.length-1].getElementsByClassName("price")[0].innerHTML = itemUnitPrice;
   products[products.length-1].getElementsByClassName("name")[0].innerHTML = itemName;
   products[products.length-1].getElementsByClassName("quantity")[0].value = "";
+  products[products.length-1].getElementsByClassName("total")[0].innerHTML = 0;
   
-
-  //insertedElement.getElementById("name").value = itemName;
-  //insertedElement.getElementById("price").value = itemUnitPrice;
 
   //update deleteButtons
   deleteButtons = document.getElementsByClassName('btn-delete');
